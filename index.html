@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Calculator Fun</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style>
+    
+    h1{
+      color: #00afb9;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    h2{
+      color: #f07167;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .container{
+      padding-bottom: 2rem;
+    }
+    .btn-outline-success{
+      margin: .5rem;
+    }
+    .btn-outline-primary{
+      margin: .5rem;
+    }
+    .btn-outline-warning{
+      margin: .5rem;
+    }
+    .btn-outline-danger{
+      margin: .5rem;
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="container">
+
+       <h1>Calculator Fun</h1>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input type="number" id="input1" name="input1" class="form-control" required placeholder="Enter Number Here">
+            </div>
+          </div>
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input type="number" id="input2" name="input2" class="form-control" required placeholder="Enter Number Here">
+            </div>
+          </div>
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-1">
+            <button onclick="performAdd();" class="btn btn-outline-primary btn-lg">+</button>
+          </div>
+          <div class="col-sm-1">
+            <button onclick="performSubtract();" class="btn btn-outline-success btn-lg">-</button>
+          </div>
+          <div class="col-sm-1">
+            <button onclick="performMultiply();" class="btn btn-outline-warning btn-lg">*</button>
+          </div>
+          <div class="col-sm-1">
+            <button onclick="performDivide();" class="btn btn-outline-danger btn-lg">/</button>
+          </div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-1"></div>
+        </div>
+
+       <div class="row">
+          <div class="col-sm-2">
+            <h2>Answer:</h2>
+          </div>
+          <div class="col-sm-2">
+            <h2 id="output" class="numeric">0</h2>
+          </div>
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4"></div>
+        </div> 
+   </div>
+
+   <div class="container">
+    <div class="row">
+          <div class="col-sm-4">
+            <img src="meme.jpg" alt="funny saying about basic math">
+          </div>
+          <div class="col-sm-4">
+            <img src="meme2.jpeg" alt="funny saying about basic math">
+          </div>
+            <div class="col-sm-4">
+            <img src="meme3.jpg" alt="funny saying about basic math">
+          </div>
+         </div>  
+    </div>
+ 
+  <script>
+
+    function performAdd() {
+      let vals = getVals();
+      let result = vals [0] + vals [1];
+      showOutput(result);
+    }
+
+    function performSubtract() {
+      let vals = getVals();
+      let result = vals [0] - vals [1];
+      showOutput(result);
+    }
+
+    function performMultiply() {
+      let vals = getVals();
+      let result = vals [0] * vals [1];
+      showOutput(result);
+    }
+
+    function performDivide() {
+      let vals = getVals();
+      let result = vals [0] / vals [1];
+      showOutput(result);
+    }
+
+    function showOutput(result) {
+      document.getElementById("output").innerHTML = result;
+      clearVals();
+    }
+
+    function getVals() {
+      let val1 = parseFloat(document.getElementById("input1").value);
+      let val2 = parseFloat(document.getElementById("input2").value);
+      return [val1, val2];
+    }
+
+    function clearVals() {
+      document.getElementById("input1").value = null;
+      document.getElementById("input2").value = null;
+    }
+  </script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
